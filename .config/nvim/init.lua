@@ -1,4 +1,3 @@
-require("config.lazy")
-require("config.nvim-tree")
+require("config")
 
 vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", {noremap = true, silent=true})
