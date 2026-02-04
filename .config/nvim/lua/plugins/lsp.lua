@@ -1,19 +1,28 @@
 return {
-	{
-		"mason-org/mason-lspconfig.nvim",
-		opts = {},
-		dependencies = {
-			{ "mason-org/mason.nvim", opts = {} },
-			"neovim/nvim-lspconfig",
-		},
-	},
-	{
-		"hrsh7th/nvim-cmp",
-		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-cmdline",
-		},
-	},
+    "neovim/nvim-lspconfig",
+    config = function()
+        vim.diagnostic.config({
+            virtual_text = true,
+            underline = true,
+            update_in_insert = false,
+            severity_sort = true,
+            float = {
+                border = "rounded",
+                source = true,
+            },
+
+        })
+
+        vim.lsp.config("lua_ls", {
+            runtime = {
+                version = "LuaJIT",
+            },
+            workspace = {
+                library = {
+                    vim.env.VIMRUNTIME,
+                },
+            },
+        })
+        vim.lsp.enable("lua_ls")
+    end,
 }
