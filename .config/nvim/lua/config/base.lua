@@ -12,6 +12,11 @@ vim.opt.fillchars = {eob=" "}
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- nvim-tree
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 local M = {}
 
 function M.ToggleLineNumber()
@@ -20,6 +25,10 @@ end
 
 function M.ToggleRelativeLineNumber()
     vim.o.relativenumber = not(vim.o.relativenumber)
+end
+
+function M.DeleteCurrentBuffer()
+    vim.api.nvim_buf_delete(0, {force = false})
 end
 
 return M
