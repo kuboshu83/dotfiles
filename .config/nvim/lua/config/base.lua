@@ -27,10 +27,6 @@ function M.ToggleRelativeLineNumber()
     vim.o.relativenumber = not(vim.o.relativenumber)
 end
 
-function M.DeleteCurrentBuffer()
-    vim.api.nvim_buf_delete(0, {force = false})
-end
-
 function M.OpenOrCloseNvimTree()
     local api = require("nvim-tree.api")
     if api.tree.is_visible() then
