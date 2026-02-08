@@ -5,3 +5,10 @@ vim.api.nvim_create_autocmd("TermOpen", {
         vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
     end,
 })
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.go",
+    callback = function ()
+        vim.lsp.buf.format({async = false})
+    end
+})
