@@ -21,8 +21,19 @@ vim.keymap.set("n", "tq", "<cmd>tabclose<cr>", opts)
 -- nvim-tree
 vim.api.nvim_set_keymap("n", "<leader>e", ":lua require('config.utils').OpenOrCloseNvimTree()<cr>", opts)
 
--- toggleterm
-vim.keymap.set("n", "<leader>t", "<cmd>ToggleTerm<cr>", opts)
+-- toggle terminal
+vim.keymap.set({ "n", "t" }, "<c-/>", "<cmd>ToggleTerm<cr>", opts)
+vim.keymap.set("t", "<esc>", [[<c-\><c-n>]], opts)
+
+-- move window
+vim.keymap.set("n", "sh", "<c-w>h", opts)
+vim.keymap.set("n", "sj", "<c-w>j", opts)
+vim.keymap.set("n", "sk", "<c-w>k", opts)
+vim.keymap.set("n", "sl", "<c-w>l", opts)
+
+-- split window
+vim.keymap.set("n", "ss", ":split<cr>", opts)
+vim.keymap.set("n", "sv", ":vsplit<cr>", opts)
 
 -- telescope
 local telescope = require("telescope.builtin")
