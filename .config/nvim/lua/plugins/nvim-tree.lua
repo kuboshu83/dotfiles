@@ -9,5 +9,13 @@ return {
 		view = {
 			width = 50,
 		},
+		renderer = {
+			icons = {
+				show = {
+					file = false,
+					folder = false,
+				},
+			},
+		},
 	},
 }
