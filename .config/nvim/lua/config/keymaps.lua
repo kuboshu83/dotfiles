@@ -17,6 +17,7 @@ vim.keymap.set("n", "tq", "<cmd>tabclose<cr>", opts)
 vim.keymap.set("n", "gd", ":lua vim.lsp.buf.definition()<cr>", opts)
 vim.keymap.set("n", "gi", ":lua vim.lsp.buf.implementation()<cr>", opts)
 vim.keymap.set("n", "gr", ":lua vim.lsp.buf.references()<cr>", { noremap = true, silent = true, nowait = true })
+vim.keymap.set("n", "gn", ":lua vim.lsp.buf.rename()<cr>", opts)
 
 -- nvim-tree
 vim.api.nvim_set_keymap("n", "<leader>e", ":lua require('config.utils').OpenOrCloseNvimTree()<cr>", opts)
