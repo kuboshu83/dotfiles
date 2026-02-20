@@ -13,6 +13,11 @@ vim.keymap.set("n", "tl", "<cmd>tablast<cr>", opts)
 vim.keymap.set("n", "te", "<cmd>tabedit .<cr>", opts)
 vim.keymap.set("n", "tq", "<cmd>tabclose<cr>", opts)
 
+-- lsp
+vim.keymap.set("n", "gd", ":lua vim.lsp.buf.definition()<cr>", opts)
+vim.keymap.set("n", "gi", ":lua vim.lsp.buf.implementation()<cr>", opts)
+vim.keymap.set("n", "gr", ":lua vim.lsp.buf.references()<cr>", { noremap = true, silent = true, nowait = true })
+
 -- nvim-tree
 vim.api.nvim_set_keymap("n", "<leader>e", ":lua require('config.utils').OpenOrCloseNvimTree()<cr>", opts)
 
