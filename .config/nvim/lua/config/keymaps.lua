@@ -2,6 +2,7 @@ local opts = { noremap = true, silent = true }
 
 -- base
 vim.api.nvim_set_keymap("n", "<Leader>;", ":lua require('config.utils').ToggleLineNumber()<cr>", opts)
+vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", opts)
 
 -- tab
 vim.keymap.set("n", "<tab>", "<cmd>tabnext<cr>", opts)
@@ -23,7 +24,7 @@ vim.keymap.set("n", "gn", ":lua vim.lsp.buf.rename()<cr>", opts)
 vim.api.nvim_set_keymap("n", "<leader>e", ":lua require('config.utils').OpenOrCloseNvimTree()<cr>", opts)
 
 -- toggle terminal
-vim.keymap.set({ "n", "t" }, "<c-/>", "<cmd>ToggleTerm<cr>", opts)
+vim.keymap.set({ "n", "t" }, "<c-.>", "<cmd>ToggleTerm<cr>", opts)
 vim.keymap.set("t", "<esc>", [[<c-\><c-n>]], opts)
 
 -- move window

@@ -5,7 +5,7 @@ return {
 	lazy = false,
 	keys = {
 		{
-			",b",
+			"<leader>b",
 			function()
 				--  write require("snack") instead of Snacks, to avoid undefined warnings.
 				require("snacks").picker.buffers()
@@ -13,21 +13,21 @@ return {
 			desc = "Buffers",
 		},
 		{
-			",f",
+			"<leader>f",
 			function()
 				require("snacks").picker.files()
 			end,
 			desc = "Find Files",
 		},
 		{
-			",g",
+			"<leader>g",
 			function()
 				require("snacks").picker.grep()
 			end,
 			desc = "Grep",
 		},
 		{
-			",dd",
+			"<leader>dd",
 			function()
 				require("snacks").bufdelete()
 			end,
